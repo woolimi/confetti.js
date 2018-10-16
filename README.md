@@ -16,4 +16,14 @@ You can configure these parameters:
 
 For a demo, [click here](https://feelingunlucky.today) and click on the arrow at the side of the search bar.
 
+The demo uses this function:
+
+    function throwConfetti() {
+        maxParticleCount = Math.random() * 250 + 5;
+        startConfetti();
+        setInterval(function() {
+            stopConfetti();
+        }, 1200);
+    }
+
 Enjoy!
