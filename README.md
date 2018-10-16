@@ -2,9 +2,11 @@
 
 A simple confetti animation overlay for your website :)
 
+Just add ```<script src="confetti.js"></script>``` to your website!
+
 ![confetti demo](https://i.imgur.com/Tjc8NvJ.png)
 
-Just add ```<script src="confetti.js"></script>``` to your website, then call one of the following available functions:
+Import the file, then call one of the following available functions:
 
     startConfetti(); //starts the confetti animation
     stopConfetti(); //stops adding confetti
