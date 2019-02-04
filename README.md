@@ -18,7 +18,7 @@ You can configure these parameters:
     maxParticleCount = 150; //set max confetti count
     particleSpeed = 2; //set the particle animation speed
 
-For a live demo, [click here](https://feelingunlucky.today) and click on the arrow at the side of the search bar.
+For a live demo, [click here](https://feelingunlucky.today) and click on the "Show the last Google search" text.
 
 The demo uses this function:
 
