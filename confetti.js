@@ -4,12 +4,14 @@ var startConfetti; //call to start confetti animation
 var stopConfetti; //call to stop adding confetti
 var toggleConfetti; //call to start or stop the confetti animation depending on whether it's already running
 var removeConfetti; //call to stop the confetti animation and remove all confetti immediately
+var isConfettiRunning; //call and returns true or false depending on whether the animation is running
 
 (function() {
 	startConfetti = startConfettiInner;
 	stopConfetti = stopConfettiInner;
 	toggleConfetti = toggleConfettiInner;
 	removeConfetti = removeConfettiInner;
+	isConfettiRunning = isConfettiRunningInner;
 	var colors = ["DodgerBlue", "OliveDrab", "Gold", "Pink", "SlateBlue", "LightBlue", "Violet", "PaleGreen", "SteelBlue", "SandyBrown", "Chocolate", "Crimson"]
 	var streamingConfetti = false;
 	var animationTimer = null;
@@ -85,6 +87,10 @@ var removeConfetti; //call to stop the confetti animation and remove all confett
 			stopConfettiInner();
 		else
 			startConfettiInner();
+	}
+	
+	function isConfettiRunningInner() {
+		return streamingConfetti;
 	}
 
 	function drawParticles(context) {

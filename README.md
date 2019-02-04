@@ -8,10 +8,11 @@ Just add ```<script src="confetti.js"></script>``` to your website!
 
 Import the file, then call any of the following available functions:
 
-    startConfetti(); //starts the confetti animation
-    stopConfetti(); //stops adding confetti
-    toggleConfetti(); //starts or stops the confetti animation depending on whether it's already running
-    removeConfetti(); //stops the confetti animation and remove all confetti immediately
+    startConfetti();     //starts the confetti animation
+    stopConfetti();      //stops adding confetti
+    toggleConfetti();    //starts or stops the confetti animation depending on whether it's already running
+    removeConfetti();    //stops the confetti animation and remove all confetti immediately
+    isConfettiRunning(); //call and returns true or false depending on whether the animation is running
 
 You can configure these parameters:
 
