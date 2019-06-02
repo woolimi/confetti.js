@@ -1,38 +1,40 @@
 # confetti.js
 
-A simple confetti animation overlay for your website :)
+A simple confetti animation overlay for your website (no libraries required) :)
 
 Just add ```<script src="//feelingunlucky.today/js/confetti.js"></script>``` to your website!
 
 ![confetti demo](https://i.imgur.com/Tjc8NvJ.png)
 
-Import the file, then call any of the following available functions:
+After adding the script, you can call any of the following available functions:
 
-	startConfetti();       //call to start confetti animation
-	stopConfetti();        //call to stop adding confetti
-	toggleConfetti();      //call to start or stop the confetti animation depending on whether it's already running
-	pauseConfetti();       //call to freeze confetti animation
-	resumeConfetti();      //call to unfreeze confetti animation
-	toggleConfettiPause(); //call to toggle whether the confetti animation is paused
-	removeConfetti();      //call to stop the confetti animation and remove all confetti immediately
-	isConfettiPaused();    //call and returns true or false depending on whether the confetti animation is paused
-	isConfettiRunning();   //call and returns true or false depending on whether the animation is running
+	confetti.start();       //call to start confetti animation
+	confetti.stop();        //call to stop adding confetti
+	confetti.toggle();      //call to start or stop the confetti animation depending on whether it's already running
+	confetti.pause();       //call to freeze confetti animation
+	confetti.resume();      //call to unfreeze confetti animation
+	confetti.togglePause(); //call to toggle whether the confetti animation is paused
+	confetti.remove();      //call to stop the confetti animation and remove all confetti immediately
+	confetti.isPaused();    //call and returns true or false depending on whether the confetti animation is paused
+	confetti.isRunning();   //call and returns true or false depending on whether the animation is running
 
 You can configure these parameters:
 
-	maxParticleCount = 150;     //set max confetti count
-	particleSpeed = 2;          //set the particle animation speed
-	confettiFrameInterval = 20; //the confetti animation frame interval
+	confetti.maxCount = 150;     //set max confetti count
+	confetti.speed = 2;          //set the particle animation speed
+	confetti.frameInterval = 20; //the confetti animation frame interval
+	confetti.alpha = 1.0;        //the alpha opacity of the confetti (between 0 and 1, where 1 is opaque and 0 is invisible)
+	confetti.gradient = false;   //whether to use gradients for the confetti particles
 
 For a live demo, [click here](https://feelingunlucky.today) and search something, anything :)
 
 The demo uses this function:
 
 	function throwConfetti() {
-		maxParticleCount = Math.random() * 100 + 50;
-		startConfetti();
+		confetti.maxCount = Math.random() * 100 + 50;
+		confetti.start();
 		setInterval(function() {
-			stopConfetti();
+			confetti.stop();
 		}, 1200);
 	}
 
