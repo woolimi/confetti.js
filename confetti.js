@@ -113,23 +113,24 @@ var confetti = {
 			}, true);
 			context = canvas.getContext("2d");
 		}
+		var count = confetti.maxCount;
 		if (min) {
 			if (max) {
 				if (min == max)
-					confetti.maxCount = max;
+					count = particles.length + max;
 				else {
 					if (min > max) {
 						var temp = min;
 						min = max;
 						max = temp;
 					}
-					confetti.maxCount = (Math.random() * (max - min) + min) | 0;
+					count = particles.length + ((Math.random() * (max - min) + min) | 0);
 				}
 			} else
-				confetti.maxCount = min;
+				count = particles.length + min;
 		} else if (max)
-			confetti.maxCount = max;
-		while (particles.length < confetti.maxCount)
+			count = particles.length + max;
+		while (particles.length < count)
 			particles.push(resetParticle({}, width, height));
 		streamingConfetti = true;
 		pause = false;
