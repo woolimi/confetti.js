@@ -33,8 +33,6 @@ For a live demo, [click here](https://feelingunlucky.today) and search something
 
 The demo uses this function:
 
-	confetti.start(1200, 50, 150);
-
-which throws a random number of confetti particles between 50 and 150 for 1200 milliseconds (1.2 seconds).
+	confetti.start(1200, 50, 150); //throws a random number of confetti particles (between 50 and 150) for 1200 milliseconds (1.2 seconds)
 
 Enjoy!
