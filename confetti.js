@@ -1,10 +1,10 @@
 var confetti = {
 	maxCount: 150,		//set max confetti count
 	speed: 2,			//set the particle animation speed
-	frameInterval: 15,	//the confetti animation frame interval
+	frameInterval: 15,	//the confetti animation frame interval in milliseconds
 	alpha: 1.0,			//the alpha opacity of the confetti (between 0 and 1, where 1 is opaque and 0 is invisible)
 	gradient: false,	//whether to use gradients for the confetti particles
-	start: null,		//call to start confetti animation
+	start: null,		//call to start confetti animation (with optional timeout in milliseconds, and optional min and max random confetti count)
 	stop: null,			//call to stop adding confetti
 	toggle: null,		//call to start or stop the confetti animation depending on whether it's already running
 	pause: null,		//call to freeze confetti animation
@@ -86,7 +86,7 @@ var confetti = {
 		}
 	}
 
-	function startConfetti() {
+	function startConfetti(timeout, min, max) {
 		var width = window.innerWidth;
 		var height = window.innerHeight;
 		window.requestAnimationFrame = (function() {
@@ -113,11 +113,30 @@ var confetti = {
 			}, true);
 			context = canvas.getContext("2d");
 		}
+		if (min) {
+			if (max) {
+				if (min == max)
+					confetti.maxCount = max;
+				else {
+					if (min > max) {
+						var temp = min;
+						min = max;
+						max = temp;
+					}
+					confetti.maxCount = (Math.random() * (max - min) + min) | 0;
+				}
+			} else
+				confetti.maxCount = min;
+		} else if (max)
+			confetti.maxCount = max;
 		while (particles.length < confetti.maxCount)
 			particles.push(resetParticle({}, width, height));
 		streamingConfetti = true;
 		pause = false;
 		runAnimation();
+		if (timeout) {
+			setInterval(stopConfetti, timeout);
+		}
 	}
 
 	function stopConfetti() {
