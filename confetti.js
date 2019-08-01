@@ -195,7 +195,7 @@ var confetti = {
 				particle.y = height + 100;
 			else {
 				particle.tiltAngle += particle.tiltAngleIncrement;
-				particle.x += Math.sin(waveAngle);
+				particle.x += Math.sin(waveAngle) - 0.5;
 				particle.y += (Math.cos(waveAngle) + particle.diameter + confetti.speed) * 0.5;
 				particle.tilt = Math.sin(particle.tiltAngle) * 15;
 			}
