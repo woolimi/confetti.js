@@ -43,7 +43,7 @@ var confetti = {
 		particle.diameter = Math.random() * 10 + 5;
 		particle.tilt = Math.random() * 10 - 10;
 		particle.tiltAngleIncrement = Math.random() * 0.07 + 0.05;
-		particle.tiltAngle = 0;
+		particle.tiltAngle = Math.random() * Math.PI;
 		return particle;
 	}
 
