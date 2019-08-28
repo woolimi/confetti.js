@@ -103,8 +103,8 @@ var confetti = {
 		if (canvas === null) {
 			canvas = document.createElement("canvas");
 			canvas.setAttribute("id", "confetti-canvas");
-			canvas.setAttribute("style", "display:block;z-index:999999;pointer-events:none;position:absolute;top:0");
-			document.body.appendChild(canvas);
+			canvas.setAttribute("style", "display:block;z-index:999999;pointer-events:none;position:fixed;top:0");
+			document.body.prepend(canvas);
 			canvas.width = width;
 			canvas.height = height;
 			window.addEventListener("resize", function() {
@@ -112,7 +112,8 @@ var confetti = {
 				canvas.height = window.innerHeight;
 			}, true);
 			context = canvas.getContext("2d");
-		}
+		} else if (context === null)
+			context = canvas.getContext("2d");
 		var count = confetti.maxCount;
 		if (min) {
 			if (max) {
