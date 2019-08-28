@@ -2,7 +2,7 @@
 
 The simplest confetti animation overlay for your website! 🙂 (no libraries required - 3.18 KB total) 
 
-Just add ```<script src="//feelingunlucky.today/js/confetti.js"></script>``` to your website, followed by `<script>confetti.start()</script>`
+Just add ```<script src="//feelingunlucky.today/js/confetti.js"></script><script>confetti.start()</script>``` to your website!
 
 ![confetti demo](https://i.imgur.com/Tjc8NvJ.png)
 
