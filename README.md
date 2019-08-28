@@ -6,7 +6,7 @@ Just add:
 
     <script src="https://cdn.jsdelivr.net/gh/mathusummut/confetti.js@1.0/confetti.min.js"></script><script>confetti.start()</script>
 
-to your website!
+and you're done!
 
 ![confetti demo](https://i.imgur.com/Tjc8NvJ.png)
 
