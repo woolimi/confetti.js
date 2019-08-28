@@ -4,7 +4,7 @@ The simplest confetti animation overlay for your website! 🙂 (no libraries req
 
 Just add:
 
-    <script src="https://cdn.jsdelivr.net/gh/mathusummut/confetti.js@1.0/confetti.min.js"></script><script>confetti.start()</script>
+    <script src="https://cdn.jsdelivr.net/gh/mathusummut/confetti.js/confetti.min.js"></script><script>confetti.start()</script>
 
 and you're done!
 
